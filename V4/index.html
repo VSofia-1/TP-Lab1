@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Medals Recorder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Olympic Medals Recorder</h3>
+                        <form id="medal-form" method="POST" action="/record-medals">
+                            <div class="form-group">
+                                <label for="country">Country:</label>
+                                <input type="text" class="form-control" id="country" name="country" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gold">Gold Medals:</label>
+                                <input type="number" class="form-control" id="gold" name="gold" min="0" value="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="silver">Silver Medals:</label>
+                                <input type="number" class="form-control" id="silver" name="silver" min="0" value="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bronze">Bronze Medals:</label>
+                                <input type="number" class="form-control" id="bronze" name="bronze" min="0" value="0" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Record Medals</button>
+                        </form>
+                        <div id="result" class="mt-4 text-center">
+                            <h4 id="success-message" class="text-success" style="display: none;">Medals Recorded Successfully!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('medal-form').onsubmit = function() {
+            document.getElementById('success-message').style.display = 'block';
+        };
+    </script>
+</body>
+</html>
